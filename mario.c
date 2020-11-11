@@ -9,20 +9,17 @@ int main (void){
 
         do {
 
-          printf("How tall is your pyramid\n");
+          printf("How tall is your pyramid");
           height = get_int("height: ");
 
         }while( height < 1 || height > 8  );
-
-
-
 
                     for (int i = 0 ; i <= height ; i++)
                           {
                              for (int j = 0 ; j <= height ; j++){
                                  if ( j > height - i ) {
                                     printf("#");
-                                 }else {
+                                 }else{
                                      printf(" ");
                                  }
                                  }
@@ -36,7 +33,7 @@ int main (void){
                                  }else {
                                      printf("#");
                                     }
-                                    
+
                                  }
                      printf("\n");
                    }
