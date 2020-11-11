@@ -26,7 +26,7 @@ int main (void){
                                      printf(" ");
                                  }
                                  }
-                               //  printf("  ");
+                                printf("  ");
 
                                  for (int k = 0 ; k < height ; k++){
 
@@ -34,7 +34,7 @@ int main (void){
 
                                     printf(" ");
                                  }else {
-                                     //printf("#");
+                                     printf("#");
                                     }
                                     
                                  }
