@@ -39,18 +39,21 @@ int main (void){
                    }*/
 
 
-                        for (int i = 0 ; i <= height ; i++)
+                        for (int i = 1 ; i <= height ; i++)
                           {
-                             for (int j = 0 ; j <= height ; j++){
+                             for (int j = 1 ; j <= height ; j++){
                                  if ( j > height - i ) {
                                     printf("#");
                                  }else{
                                      printf(" ");
                                  }
+
+
                                  }
+
                                 printf("  ");
 
-                                 for (int k = 0 ; k < height ; k++){
+                                 for (int k = 1 ; k < height ; k++){
 
                                  if ( i <= k  ) {
 
@@ -58,9 +61,9 @@ int main (void){
                                  }else {
                                      printf("#");
                                     }
-
                                  }
                      printf("\n");
                    }
 
 }
+
