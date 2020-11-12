@@ -16,7 +16,7 @@ int main (void){
 
                         for (int i = 1 ; i <= height ; i++)
                           {
-                             for (int j = 1 ; j <= height ; j++){
+                            for (int j = 1 ; j <= height ; j++){
                                  if ( j > height - i ) {
                                     printf("#");
                                  }else{
@@ -25,13 +25,15 @@ int main (void){
                                  }
                                 printf("  ");
                                  for (int k = 1 ; k <= height ; k++){
-                                 if ( i <= k-1  ) {
+                                 if ( i < k  ) {
                                     printf(" ");
                                  }else {
                                      printf("#");
                                     }
                                  }
                      printf("\n");
-                   }
+                   
+                  
+}
 }
 
