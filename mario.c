@@ -23,7 +23,7 @@ int main (void){
                                      printf(" ");
                                  }
                                  }
-                                printf(" ");
+                                printf("  ");
                                  for (int k = 1 ; k <= height ; k++){
                                  if ( i < k  ) {
                                     printf(" ");
