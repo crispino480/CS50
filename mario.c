@@ -24,11 +24,9 @@ int main (void){
                                  }
                                  }
                                 printf("  ");
-
                                  for (int k = 1 ; k <= height ; k++){
                                  if ( i < k  ) {
                                     printf(" ");
-
                                  }else {
                                      printf("#");
                                     }
