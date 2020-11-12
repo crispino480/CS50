@@ -25,7 +25,7 @@ int main (void){
                                  }
                                 printf("  ");
                                  for (int k = 1 ; k <= height ; k++){
-                                 if ( i < k  ) {
+                                 if ( i <= k-1  ) {
                                     printf(" ");
                                  }else {
                                      printf("#");
