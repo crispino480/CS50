@@ -29,7 +29,7 @@ printf("How tall is your pyramid\n");
       if( i < k) {
     printf(" ");
         }else {
-    printf("#");
+    printf("#");//
          }
        }
      printf("\n");//
