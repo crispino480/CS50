@@ -26,7 +26,7 @@ printf("How tall is your pyramid\n");
         printf("");
          }
     }
-    printf(" ");
+    printf("  ");
      for (int k = 1 ; k <= height ; k++){
       if( i < k) {
     printf("");
