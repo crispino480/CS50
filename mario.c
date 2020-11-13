@@ -13,23 +13,25 @@ int main(void){
 printf("How tall is your pyramid\n");
         height = get_int("height: ");
 
-    }while(height < 1 || height > 8);
+    }while(height < 1 || height > 8);// The input value is check to meet the requirement, otherwise the user must enter a value again
 
  for (int i = 1 ; i <= height ; i++)
+ {
+
+    for (int j = 1 ; j <= height ; j++)
     {
-    for (int j = 1 ; j <= height ; j++){
         if(j > height - i) {
       printf("#");
         }else{
-        printf(" ");
+        printf("");
          }
     }
-    printf("  ");
+    printf(" ");
      for (int k = 1 ; k <= height ; k++){
       if( i < k) {
-    printf(" ");
+    printf("");
         }else {
-    printf("#");//
+    printf("#");
          }
        }
      printf("\n");
