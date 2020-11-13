@@ -32,7 +32,7 @@ printf("How tall is your pyramid\n");
     printf("#");//
          }
        }
-     printf("\n");//
+     printf("\n");
 }
 
 }
