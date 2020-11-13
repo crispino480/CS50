@@ -16,7 +16,7 @@ printf("How tall is your pyramid\n");
     }while(height < 1 || height > 8);
 
 
-/*
+
  for (int i = 1 ; i <= height ; i++)
     {
     for (int j = 1 ; j <= height ; j++){
@@ -35,19 +35,7 @@ printf("How tall is your pyramid\n");
          }
        }
      printf("\n");
-}*/
+}
 
-for (int i = 1 ; i <= height ; i++)
-   {
-    for (int j = 1 ; j <= height ; j++)
-    {
-      if(j > height - i) {
-      printf("#");
-        }else{
-    printf(" ");
-         }
-    }
-    printf("\n");
-  }
 }
 
