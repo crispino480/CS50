@@ -4,17 +4,17 @@
 #include <ctype.h>
 #include <math.h>
 
- string userInput();
- int lettercount(string t);
- int wordcount(string t);
- int sentencecount(string t);
- int countl=0;
- int countw=0;
- int counts=0;
- string space = " ";
+string userInput();
+int lettercount(string t);
+int wordcount(string t);
+int sentencecount(string t);
+int countl = 0;
+int countw = 0;
+int counts = 0;
+string space = " ";
 
-
-int main (void)
+ 
+int main(void)
 {
 
 string s = userInput(); //To get user input
@@ -29,7 +29,7 @@ float S = (st*100/w);
 int index = round(0.0588*L - 0.296*S - 15.8);
 
 if(index < 1)
-{
+{ 
  printf(" Before Grade 1\n");
 }else if (index >= 16)
 {
@@ -51,12 +51,12 @@ printf(" Grade 16+\n");
 int sentencecount(string t)
 {
   int n = strlen(t);
-
-  for(int i=0; i<n;i++)
+for(int i = 0; i < n; i++)
     {
-       if ( t[i] == '.' || t[i] == '!' || t[i] == '?')
+      if( t[i] == '.' || t[i] == '!' || t[i] == '?')
         {
-            counts++;// count letters
+            
+         counts++;// count letters
         }
     }
     return counts;
