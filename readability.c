@@ -86,11 +86,11 @@ int lettercount(string t)
 {
 int n = strlen(t);
 
-  for(int i=0; i<n;i++)
+  for(int i=0; i < n; i++)
     {
          if (isalpha(t[i])) // check if the input is a letter
         {
-            countl++;// count letters
+        countl++;// count letters
         }
      }
      return countl;
@@ -108,3 +108,4 @@ string userInput()
 
 }
 
+ 
