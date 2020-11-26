@@ -34,7 +34,7 @@ int k = atoi(argv[1]);
 string t = get_string("Plaintext:");
 
 
-printf("Ciphertext: ");
+printf("ciphertext: ");
 
 for(int j = 0 ; j < strlen(t); j++)
 {
