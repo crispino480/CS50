@@ -41,7 +41,7 @@ int main (int argc, string argv[])
                {
                    if( argv[1][i] == argv[1][r] ){
                       printf("Key must not content repeat character\n");
-                       r=m;
+                      // r=m;
                       
                        return 1;
                    }
