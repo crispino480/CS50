@@ -39,7 +39,7 @@ int main (int argc, string argv[])
           {
             if (isalpha(argv[1][i])) // This Iterate over the provided argument to make sure all characters are alphabethic
             {
-                for (int r = 1, m = strlen(argv[1]); r <= m; r++)
+                for (int r = 1, m = strlen(argv[1]); r < m; r++)
                 {
                    if( argv[1][i] == argv[1][r] )
                     {
