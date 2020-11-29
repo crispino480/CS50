@@ -23,41 +23,46 @@ int main (int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
-    else if(strlen(argv[1])!=26 )
+    else if (strlen(argv[1]) != 26 )
     {
 
-     printf("Key must contain 26 characters.\n");
+        printf("Key must contain 26 characters.\n");
         return 1;
 
 
-    } else {
+    }
+    else
+    {
 
 
         for (int i = 0, n = strlen(argv[1]); i < n; i++)
           {
             if (isalpha(argv[1][i])) // This Iterate over the provided argument to make sure all characters are alphabethic
             {
-               for(int r = 1, m = strlen(argv[1]); r < m; r++)
-               {
-                   if( argv[1][i] == argv[1][r] ){
-                      printf("Key must not content repeat character\n");
-                      // r=m;
+                for (int r = 1, m = strlen(argv[1]); r < m; r++)
+                {
+                   if( argv[1][i] == argv[1][r] )
+                    {
+                        printf("Key must not content repeat character\n");
+                        // r=m;
 
-                       return 1;
-                   }
-                    i=n;
-               }
+                        return 1;
+                    }
+                    i = n;
+                }
 
 
-            }else {
+            }
+            else
+            {
 
                 printf("Usage: ./substitution key\n");
-               // i = n;
+                // i = n;
                 return 1;
-          }
+            }
 
 
-    }
+        }
 
     }
 
@@ -72,13 +77,16 @@ int main (int argc, string argv[])
 
         if (islower(t[j]))
         {
-        printf("%c", tolower(argv[1][t[j] - 'a']));
-        }else if(isupper(t[j]))
+            printf("%c", tolower(argv[1][t[j] - 'a']));
+        }
+       else if (isupper(t[j]))
         {
-        printf("%c", toupper(argv[1][t[j] - 'A']));
+            printf("%c", toupper(argv[1][t[j] - 'A']));
 
-        }else{
-           printf("%c", t[j]);
+        }
+        else
+        {
+            printf("%c", t[j]);
         }
 
 
@@ -88,5 +96,3 @@ int main (int argc, string argv[])
 
     return 0;
 }
-
-
