@@ -52,7 +52,7 @@ int main (int argc, string argv[])
             }else {
 
                 printf("Usage: ./substitution key\n");
-                i = n;
+               // i = n;
                 return 1;
           }
 
