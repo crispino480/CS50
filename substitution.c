@@ -45,7 +45,7 @@ int main (int argc, string argv[])
                       
                        return 1;
                    }
-                    //i=n;
+                    i=n;
                }
 
 
