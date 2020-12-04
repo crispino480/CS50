@@ -94,22 +94,28 @@ void print_winner(void)
 
 
     int votes_count = candidates[0].votes ;
-    string swap[candidate_count];
-    swap [0] = candidates[0].name;
+string swap[candidate_count];
+swap [0] = candidates[0].name;
 
-    for (int i = 1; i < candidate_count; i++)
-    {
-
-        if (candidates[i].votes >= votes_count)
-        {
-
-            swap [0] = candidates[i].name;
-            votes_count = candidates[i].votes ;
-        }
-    }
+ for (int i = 0; i < candidate_count; i++)
+{
 
 
-    printf("%s\n", swap [0]);
+if(candidates[i].votes > votes_count){
+   
+   swap [i] = candidates[i].name;
+   votes_count = candidates[i].votes ; 
 
+}else if(candidates[i].votes == votes_count){
+  swap [i] = candidates[i].name;
+   votes_count = candidates[i].votes ; 
+}
+  } 
 
+ for (int i = 0; i < candidate_count; i++)
+{
+  if(vote(swap [i])){
+    printf("%s\n", swap [i]);
+ }
+}
 }
