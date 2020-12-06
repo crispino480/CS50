@@ -199,12 +199,12 @@ bool print_winner(void)
 
     if (candidates[i].votes > voter_count/2 )
     {
-    
+
     printf("%s\n", candidates[i].name);
     return true;
-    
+
     }
-    
+
 }
 return false;
 }
@@ -214,22 +214,22 @@ int find_min(void)
 {
     // TODO
   int min_vote=0;
-  
+
   for (int j = 0; j < candidate_count; j++){
-      
+
     if(!candidates[j].eliminated)
     {
-    
+
         if(candidates[j].votes < candidates[j+1].votes)
         {
         min_vote = candidates[j].votes;
-        
+
         }
         }
-    
+
     }
-    
-  
+
+
     return min_vote;
 }
 
@@ -237,7 +237,7 @@ int find_min(void)
 bool is_tie(int min)
 {
     // TODO
-    
+
     for(int i = 0; i < candidate_count ; i++)
     {
      if(candidates[i].votes == min)
@@ -245,7 +245,7 @@ bool is_tie(int min)
      return true;
      }
     }
-    
+
     return false;
 }
 
@@ -255,14 +255,14 @@ void eliminate(int min)
     // TODO
      for(int i = 0; i < candidate_count ; i++)
     {
-    
+
     if( candidates[i].votes == min)
     {
      candidates[i].eliminated = true;
      min = find_min();
     }
-    
+
     }
-    
+
     return;
 }
