@@ -257,10 +257,12 @@ for(int i = 0; i < candidate_count ; i++)
      if(candidates[i].eliminated)
      {
      return true;
-     } else {
+     } 
+     
+    /* if(){
      
      return false;
-     }
+     }*/
      
      }
      
