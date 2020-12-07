@@ -258,13 +258,14 @@ for(int i = 0; i < candidate_count ; i++)
      {
      return true;
      } 
+         }
+         
+          if(candidates[i].votes != min)
+          {
      
-    if(candidates[i].eliminated == true){
-     
-     return false;
+         return false;
      }
-     
-     }
+         
      
      }
 
