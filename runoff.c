@@ -243,11 +243,13 @@ for(int i = 0; i < candidate_count ; i++)
      return true;
      
      } 
-    /*else {
-       return false;   
-         
-     }*/
+     
+    if(!candidates[i].eliminated)
+     {
+      
+        return false;
         
+     }
      } 
          
      
