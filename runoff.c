@@ -150,35 +150,36 @@ void tabulate(void)
      for (int j = 0; j < voter_count; j++)
     {
 
-
+   // count vote for first votes choice, for non eliminated candidates
    preferred = preferences[j][0];
 
    if (candidates[preferred].eliminated == false)
    {
    candidates[preferred].votes++;
+   // count second choice votes if first choise has been eliminated
    }else
-   
-      // if (candidates[preferred].eliminated == true)
+
+
    {
        int k =1;
-       do 
+       do
        {
-           
+
        preferred = preferences[j][k];
-       
+
        if (candidates[preferred].eliminated == false)
        {
        candidates[preferred].votes++;
-       
+
        }
        k++;
-       
-       }while ((candidates[preferred].eliminated == true) && (k < voter_count));
-  
-   }
-   
 
-    
+       }while ((candidates[preferred].eliminated == true) && (k < voter_count));
+
+   }
+
+
+
 
    }
 
@@ -212,7 +213,7 @@ int find_min(void)
 
   for (int j = 0; j < candidate_count; j++){
 
-    if(candidates[j].eliminated)
+    if(candidates[j].eliminated == false)
     {
 
         if(candidates[j].votes < candidates[j+1].votes)
