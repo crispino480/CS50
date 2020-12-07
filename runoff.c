@@ -222,9 +222,9 @@ int find_min(void)
 
         }
         }
-        
+
     }
-    
+
     return min_vote;
 }
 
@@ -239,9 +239,9 @@ bool is_tie(int min)
      {
      return true;
      }
-         
+
      }
-     
+
     return false;
 }
 
@@ -254,13 +254,13 @@ void eliminate(int min)
 
     if( candidates[i].votes == min)
     {
-        
+
      candidates[i].eliminated = true;
-     
-    
+
+
     }
-    
-   
+
+
     }
 
     return;
