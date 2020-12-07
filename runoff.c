@@ -158,7 +158,7 @@ void tabulate(void)
    if (candidates[preferred].eliminated)
    {
    candidates[preferred].votes++;
-   return;
+  // return;
    }else{
     for (int k = 1; k < voter_count; k++)
     {
@@ -167,7 +167,7 @@ void tabulate(void)
    {
     candidates[preferred].votes++;
     k = voter_count;
-    return;
+   // return;
    }
     }
    
