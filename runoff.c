@@ -239,8 +239,9 @@ bool is_tie(int min)
      {
      return true;
      }
-    }
-
+         
+     }
+     
     return false;
 }
 
@@ -255,6 +256,9 @@ void eliminate(int min)
     {
      candidates[i].eliminated = true;
      min = find_min();
+    }else {
+        
+        candidates[i].eliminated = false;
     }
 
     }
