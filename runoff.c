@@ -136,10 +136,10 @@ bool vote(int voter, int rank, string name)
        {
 
        preferences[voter][rank] = i;
-       return false;
+       return true;
        }
     }
-    return true;
+    return false;
 }
 
 // Tabulate votes for non-eliminated candidates
