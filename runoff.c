@@ -173,9 +173,8 @@ void tabulate(void)
        candidates[preferred].votes++;
        
        }
-       candidates[preferred].votes++;
        
-       }while ((candidates[preferred].eliminated == true) && (k <voter_count));
+       }while ((candidates[preferred].eliminated == true) && (k < voter_count));
   
    }
    
