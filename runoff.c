@@ -242,10 +242,11 @@ for(int i = 0; i < candidate_count ; i++)
      {
      return true;
      
-     } else {
+     } 
+    /*else {
        return false;   
          
-     }
+     }*/
         
      } 
          
