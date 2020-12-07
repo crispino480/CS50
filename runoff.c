@@ -247,7 +247,11 @@ for(int i = 0; i < candidate_count ; i++)
     if(!candidates[i].eliminated)
      {
       
-        return false;
+       if(candidates[i].votes == min)
+     {
+     return false;
+     
+     } 
         
      }
      } 
