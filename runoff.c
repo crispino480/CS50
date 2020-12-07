@@ -146,7 +146,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    int preferred = 0;
+    int preferred;
      for (int i = 0; i < candidate_count; i++)
     {
 
@@ -158,7 +158,7 @@ void tabulate(void)
    if (candidates[preferred].eliminated)
    {
    candidates[preferred].votes++;
-  
+  // printf("%i",candidates[preferred].votes);
    }
 
     }
