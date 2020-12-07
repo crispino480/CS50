@@ -166,6 +166,8 @@ void tabulate(void)
      if (candidates[k].eliminated)
    {
     candidates[preferred].votes++;
+    k = voter_count;
+    return;
    }
     }
    
