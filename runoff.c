@@ -154,12 +154,31 @@ void tabulate(void)
     {
 
    preferred = preferences[j][i];
-   
-   if (candidates[preferred].eliminated)
+
+   if (candidates[preferred].eliminated == false)
    {
    candidates[preferred].votes++;
-  // printf("%i",candidates[preferred].votes);
+  
    }
+    if (candidates[preferred].eliminated == true)
+   {
+       int k = i+1;
+       do 
+       {
+           
+       preferred = preferences[j][k];
+       
+       if (candidates[preferred].eliminated == false)
+       {
+       candidates[preferred].votes++;
+       
+       }
+       candidates[preferred].votes++;
+       
+       }while ((candidates[preferred].eliminated == true) && (k <voter_count));
+  
+   }
+   
 
     }
 
