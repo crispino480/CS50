@@ -257,6 +257,13 @@ void eliminate(int min)
      candidates[i].eliminated = true;
     // min = find_min();
     }
+    
+     if( candidates[i].votes != min)
+    {
+     candidates[i].eliminated = false;
+    // min = find_min();
+    }
+
 
     }
 
