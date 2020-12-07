@@ -156,9 +156,9 @@ void tabulate(void)
    if (candidates[preferred].eliminated == false)
    {
    candidates[preferred].votes++;
-   }
+   }else
    
-    if (candidates[preferred].eliminated == true)
+      // if (candidates[preferred].eliminated == true)
    {
        int k =1;
        do 
