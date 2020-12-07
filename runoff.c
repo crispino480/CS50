@@ -209,23 +209,22 @@ return false;
 int find_min(void)
 {
     // TODO
-  int min_vote=0;
+  int min_vote= candidates[0].votes;
 
   for (int j = 0; j < candidate_count; j++){
 
     if(candidates[j].eliminated == false)
     {
 
-        if(candidates[j].votes < candidates[j+1].votes)
+        if(candidates[j].votes < min_vote)
         {
         min_vote = candidates[j].votes;
 
         }
         }
-
+        
     }
-
-
+    
     return min_vote;
 }
 
