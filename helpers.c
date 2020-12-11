@@ -70,12 +70,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     
      for (int i = 0 , n = height; i < n; i++)
     {
-       int tmp;
+       //int tmp;
           // get the rgb pixel of the image, compute the average and assign the avg  value as new value to r,g,b
          for (int j = 0 , m = width; j < m; j++)
              {
                 
-                tmp = image[i][j].rgbtRed;
+               int tmp = image[i][j].rgbtRed;
                 image[i][j].rgbtRed = image[i][m-1-j].rgbtRed;
                 image[i][m-1-j].rgbtRed = tmp;
                 
