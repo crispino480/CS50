@@ -1,0 +1,41 @@
+ #include "helpers.h"
+ #include <math.h>
+
+// Convert image to grayscale
+void grayscale(int height, int width, RGBTRIPLE image[height][width])
+{
+    int avg;
+    
+    for (int i = 0 , n = height; i < n; i++)
+    {
+       
+          // get the rgb pixel of the image, compute the average and assign the avg  value as new value to r,g,b
+         for (int j = 0 , m = width; j < m; j++)
+             {
+              avg = round((image[i][j].rgbtRed +  image[i][j].rgbtGreen +  image[i][j].rgbtBlue)/3.00);
+              image[i][j].rgbtRed =(int)avg;
+              image[i][j].rgbtGreen =(int)avg;
+              image[i][j].rgbtBlue =(int)avg;
+         } 
+    }
+
+    return;
+}
+
+// Convert image to sepia
+void sepia(int height, int width, RGBTRIPLE image[height][width])
+{
+    return;
+}
+
+// Reflect image horizontally
+void reflect(int height, int width, RGBTRIPLE image[height][width])
+{
+    return;
+}
+
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+{
+    return;
+}
