@@ -29,7 +29,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0 , n = height; i < n; i++)
     {
        
-          // get the rgb pixel of the image, compute the average and assign the avg  value as new value to r,g,b
+          // get the rgb pixel of the image, use a formula to change each pixel on the image
          for (int j = 0 , m = width; j < m; j++)
              {
                  
@@ -67,6 +67,20 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    
+     for (int i = 0 , n = height; i < n; i++)
+    {
+       int tmp;
+          // get the rgb pixel of the image, compute the average and assign the avg  value as new value to r,g,b
+         for (int j = 0 , m = width; j < m; j++)
+             {
+                tmp = image[i][j].rgbtRed;
+                image[i][j].rgbtRed = image[i][n-1+j].rgbtRed;
+                image[i][n-1+j].rgbtRed = tmp;
+                
+             }
+             
+    }
     return;
 }
 
