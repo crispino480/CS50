@@ -181,9 +181,9 @@ for (int ii = 0 , nn = height; ii < nn; ii++)
           // get the rgb pixel of the image, 
          for (int jj = 0 , mm = width; jj < mm; jj++)
              {
-              image[ii][jj].rgbtRed = tmp[ii][jj].rgbtRed;
-              image[ii][jj].rgbtGreen = tmp[ii][jj].rgbtGreen;
-              image[ii][jj].rgbtBlue = tmp[ii][jj].rgbtBlue;
+              image[ii][jj].rgbtRed = tmp[i][j].rgbtRed;
+              image[ii][jj].rgbtGreen = tmp[i][j].rgbtGreen;
+              image[ii][jj].rgbtBlue = tmp[i][j].rgbtBlue;
          }
     }
 
