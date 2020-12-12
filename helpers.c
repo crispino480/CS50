@@ -154,7 +154,7 @@ divider++;
 }
 }
 
-}else
+}else if(i != 0 && j == 0)
 {
 for(int r=-1; r<2;r++)
    {
