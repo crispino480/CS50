@@ -131,7 +131,7 @@ for(int r=-1; r<2;r++)
  {
   for(int r=0; r<2;r++)
    {
-    for(int s=-1; s<2;s++)
+    for(int s=0; s<2;s++)
     {
      redSum+=image[r][s].rgbtRed;
      greenSum +=image[r][s].rgbtGreen;
