@@ -94,8 +94,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE tmp[height][width];
-
+    RGBTRIPLE tmp[height][width];//create an empty image, will be use  to new rgb value from the original image
+    
+    //get a pixel from the initial image
     for (int i = 0 , n = height; i < n; i++)
     {
          for (int j = 0 , m = width; j < m; j++)
@@ -105,16 +106,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int greenSum = 0;
             int blueSum = 0;
             float divider = 0.00;
-
+            // iterate over the pixel at coordonate -1,0,1
             for (int r = -1; r < 2; r++)
             {
                 for (int s = -1; s < 2; s++)
-                {
-                    if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
+                {    
+                    //exclude coordonates for which  i-1 or j-1 is negative or bigger than height - 1 or width - 1
+                   /* if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
                     {
                         continue;
 
-                    }
+                    }*/
                     redSum += image[i + r][j + s].rgbtRed;
                     greenSum += image[i + r][j + s].rgbtGreen;
                     blueSum += image[i + r][j + s].rgbtBlue;
