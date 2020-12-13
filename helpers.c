@@ -98,7 +98,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
  for (int i = 0 , n = height; i < n; i++)
     {
-          // get the rgb pixel of the image,
          for (int j = 0 , m = width; j < m; j++)
       {
 
@@ -107,70 +106,23 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
        int blueSum=0;
        int divider=0;
 
-if(i != 0 && j !=0)
-{
-
 for(int r=-1; r<2;r++)
   {
    for(int s=-1; s<2;s++)
    {
-
+   if (i+r<0 || i+r>height-1 || j+s <0 || j+s>width-1)
+   {
+   continue;
+   
+    }else{
     redSum+=image[i+r][j+s].rgbtRed;
     greenSum +=image[i+r][j+s].rgbtGreen;
     blueSum += image[i+r][j+s].rgbtBlue;
     divider++;
     }
+    }
    }
-  }
-
-
- if(i == 0 || j == 0)
- {
-
- if(i == 0 && j ==0 )
- {
-  for(int r=0; r<2;r++)
-   {
-    for(int s=0; s<2;s++)
-    {
-     redSum+=image[r][s].rgbtRed;
-     greenSum +=image[r][s].rgbtGreen;
-     blueSum += image[r][s].rgbtBlue;
-     divider++;
-     }
-   }
-
-  }else if (i == 0 && j != 0)
-{
-for(int r=0; r<2;r++)
-   {
-    for(int s=-1; s<2;s++)
-    {
-
-redSum+=image[r][j+s].rgbtRed;
-greenSum +=image[r][j+s].rgbtGreen;
-blueSum += image[r][j+s].rgbtBlue;
-divider++;
-}
-}
-
-}else if(i != 0 && j == 0)
-{
-for(int r=-1; r<2;r++)
-   {
-    for(int s=0; s<2;s++)
-    {
-
-redSum+=image[i+r][j].rgbtRed;
-greenSum +=image[i+r][j].rgbtGreen;
-blueSum += image[i+r][j].rgbtBlue;
-divider++;
-}
-
-}
-
-}
-
+  
 tmp[i][j].rgbtRed=round(redSum/divider);
 tmp[i][j].rgbtGreen=round(greenSum/divider);
 tmp[i][j].rgbtBlue=round(blueSum/divider);
@@ -191,4 +143,5 @@ for (int ii = 0 , nn = height; ii < nn; ii++)
 }
 }
 }
-}
+
+
