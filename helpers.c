@@ -95,7 +95,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE tmp[height][width];//create an empty image, will be use  to new rgb value from the original image
-    
+
     //get a pixel from the initial image
     for (int i = 0 , n = height; i < n; i++)
     {
@@ -110,9 +110,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             for (int r = -1; r < 2; r++)
             {
                 for (int s = -1; s < 2; s++)
-                {    
+                {
                     //exclude coordonates for which  i-1 or j-1 is negative or bigger than height - 1 or width - 1
-                   if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
+                    if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
                     {
                         continue;//iterate to the value
 
