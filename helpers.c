@@ -112,11 +112,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int s = -1; s < 2; s++)
                 {    
                     //exclude coordonates for which  i-1 or j-1 is negative or bigger than height - 1 or width - 1
-                   /* if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
+                   if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
                     {
                         continue;
 
-                    }*/
+                    }
                     redSum += image[i + r][j + s].rgbtRed;
                     greenSum += image[i + r][j + s].rgbtGreen;
                     blueSum += image[i + r][j + s].rgbtBlue;
