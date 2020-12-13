@@ -126,22 +126,24 @@ for(int r=-1; r<2;r++)
 tmp[i][j].rgbtRed=round(redSum/divider);
 tmp[i][j].rgbtGreen=round(greenSum/divider);
 tmp[i][j].rgbtBlue=round(blueSum/divider);
-
-for (int ii = 0 , nn = height; ii < nn; ii++)
-    {
-
-          // get the rgb pixel of the image, 
-         for (int jj = 0 , mm = width; jj < mm; jj++)
-             {
-              image[ii][jj].rgbtRed = tmp[i][j].rgbtRed;
-              image[ii][jj].rgbtGreen = tmp[i][j].rgbtGreen;
-              image[ii][jj].rgbtBlue = tmp[i][j].rgbtBlue;
          }
     }
 
-    return;
+
+for (int i = 0 , nn = height; i < nn; i++)
+    {
+
+          // get the rgb pixel of the image, 
+         for (int j = 0 , mm = width; j < mm; j++)
+             {
+              image[i][j].rgbtRed = tmp[i][j].rgbtRed;
+              image[i][j].rgbtGreen = tmp[i][j].rgbtGreen;
+              image[i][j].rgbtBlue = tmp[i][j].rgbtBlue;
+    
 }
+
 }
+return;
 }
 
 
