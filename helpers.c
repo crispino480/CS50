@@ -114,9 +114,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     //exclude coordonates for which  i-1 or j-1 is negative or bigger than height - 1 or width - 1
                    if (i + r < 0 || i + r > height - 1 || j + s < 0 || j + s > width - 1)
                     {
-                        continue;
+                        continue;//iterate to the value
 
                     }
+                    //for valide values, sum up the red,green and blue pixels
                     redSum += image[i + r][j + s].rgbtRed;
                     greenSum += image[i + r][j + s].rgbtGreen;
                     blueSum += image[i + r][j + s].rgbtBlue;
@@ -124,14 +125,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
-
+            //get the average from the above sum and copie the pixel to the temp image created
             tmp[i][j].rgbtRed = round(redSum / divider);
             tmp[i][j].rgbtGreen = round(greenSum / divider);
             tmp[i][j].rgbtBlue = round(blueSum / divider);
          }
     }
 
-
+    //merge the new pixel from the temp image to the original image
     for (int i = 0 , nn = height; i < nn; i++)
     {
 
