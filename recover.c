@@ -44,7 +44,7 @@ img = fopen(filename, "w");
  fclose(img);
  count++;
 }
-}while (fread(buffer, sizeof(BYTE),1,img)!= EOF);
+}while (fread(buffer, sizeof(BYTE),1,img) == 512);
 
 
 free(filename);
