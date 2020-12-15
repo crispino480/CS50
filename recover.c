@@ -31,24 +31,24 @@ fread (buffer, 512, 1, file);
 
 char *filename = malloc(sizeof(int)*3);
 int count = 0;
-FILE *img ;
+
 
 //check if bytes are 0xff 0xd8 0xff
-do
+while (fread(buffer, sizeof(BYTE),1,file) >0)
 {
 if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
 {
  sprintf(filename, "%03i.jpg" , count);
-img = fopen(filename, "w");
+FILE *img = fopen(filename, "w");
  fwrite(&buffer,sizeof(BYTE),1,img);
  fclose(img);
  count++;
 }
-}while (fread(buffer, sizeof(BYTE),1,img) == 512);
+}
 
 
 free(filename);
-fclose(img);
+fclose(file);
 return 0;
 }
 
