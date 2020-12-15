@@ -46,6 +46,7 @@ img = fopen(filename, "w");
 }
 }while (fread(buffer, sizeof(BYTE),1,img)!= EOF);
 
+fclose(img);
 free(filename);
 return 0;
 }
