@@ -43,15 +43,15 @@ int main(int argc, char *argv[])
             {
             fclose(img);
             }
+            count++;
             sprintf(filename, "%03i.jpg" , count);
             img = fopen(filename, "w");
 
             if(img!=NULL)
             {
-               fwrite(&buffer, sizeof(BYTE), 1,img);
+               fwrite(buffer, sizeof(BYTE), 1,img);
             }
 
-            count++;
         }
     }
 
