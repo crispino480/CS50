@@ -21,7 +21,7 @@ FILE *file= fopen(argv[1],"r");
 
 if(file==NULL)
 {
-   fprintf(stderr, "Usage:  %s image\n", argv[0]);
+   fprintf(stderr, "Unable to open file%s\n", argv[1]);
    return 1; 
 }
 
