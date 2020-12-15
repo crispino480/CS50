@@ -34,17 +34,22 @@ int main(int argc, char *argv[])
          FILE *img = NULL;
 
 //check if bytes are 0xff 0xd8 0xff
-    while (fread(buffer, sizeof(BYTE), 1, file) > 0)
+    while (fread(buffer, sizeof(BYTE), 1, file) || feof(file)==0)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            sprintf(filename, "%03i.jpg" , count);
+            
             if(img==NULL)
             {
             fclose(img);
             }
+            sprintf(filename, "%03i.jpg" , count);
             img = fopen(filename, "w");
-            fwrite(&buffer, sizeof(BYTE), 1,img);
+            
+            if(img!=NULL)
+            {
+               fwrite(&buffer, sizeof(BYTE), 1,img);
+            }
             
             count++;
         }
