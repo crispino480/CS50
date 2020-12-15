@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
               fread(buffer, 512, 1, ptr);
 
-    char *filename = malloc(sizeof(int) * 3);
+    char* filename = malloc(sizeof(int) * 3);
             int count =  0;
-         FILE *img = NULL;
+         FILE* img = NULL;
 
 //check if bytes are 0xff 0xd8 0xff
     while (fread(buffer, sizeof(BYTE), 1,ptr) || feof(ptr)==0)
