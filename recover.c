@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
             
             count++;
-            sprintf(filename, "%03i.jpg" , count);
+            sprintf(filename, "%03d.jpg" , count);
             img = fopen(filename, "w");
 
             if(img!=NULL)
