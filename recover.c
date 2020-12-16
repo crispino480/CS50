@@ -23,28 +23,28 @@ int main(int argc, char *argv[])
 
     if (ptr == NULL)
     {
-        fprintf(stderr, "Unable to open file%s\n", argv[1]);
+        fprintf(stderr, "Unable to open file%s\n", argv[0]);
         return 1;
     }
 
 //read 3 bytes from file
     BYTE buffer[512];
-              fread(buffer,1,sizeof(BYTE), ptr);
+              fread(buffer,sizeof(BYTE),1, ptr);
 
     char* filename = malloc(sizeof(int) * 3 + sizeof(char)*5) ;
             int count =  0;
          FILE* img = NULL;
 
 //check if bytes are 0xff 0xd8 0xff
-    while (fread(buffer, sizeof(BYTE), 1,ptr) !=0)
+    while (fread(buffer, sizeof(BYTE), 1,ptr) ==255)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
 
-           if(img!=NULL)
+           /*if(img!=NULL)
             {
                 fclose(img);
-            }
+            }*/
 
             sprintf(filename, "%03i.jpg" , count);
             img = fopen(filename, "w");
@@ -57,14 +57,14 @@ int main(int argc, char *argv[])
         }
     }
 
-   if (ptr ==NULL)
+  /* if (ptr ==NULL)
    {
        fclose(ptr);
    }
    if(img==NULL)
    {
        fclose(img);
-   }
+   }*/
 
     free(filename);
     fclose(ptr);
