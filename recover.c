@@ -24,14 +24,14 @@ int main(int argc, char *argv[])
     if (ptr == NULL)
     {
         fprintf(stderr, "Unable to open file%s\n", argv[1]);
-        return 2;
+        return 1;
     }
 
 //read 3 bytes from file
     BYTE buffer[512];
               fread(buffer, 512, 1, ptr);
 
-    char* filename = malloc(sizeof(int) * 8) ;
+    char* filename = malloc(sizeof(int) * 3) ;
             int count =  0;
          FILE* img = NULL;
 
