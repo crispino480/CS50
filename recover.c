@@ -29,16 +29,16 @@ int main(int argc, char *argv[])
 
 //read 3 bytes from file
     BYTE buffer[512];
-              fread(buffer,sizeof(BYTE),1, ptr);
+            //  fread(buffer,sizeof(BYTE),1, ptr);
 
     char* filename = malloc(sizeof(int) * 3 + sizeof(char)*5) ;
             int count =  0;
          FILE* img = NULL;
 
 //check if bytes are 0xff 0xd8 0xff
-    while (fread(buffer, sizeof(BYTE), 1,ptr) ==255)
+    while (fread(buffer, sizeof(BYTE), 1,ptr) ==512)
     {
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
 
            /*if(img!=NULL)
