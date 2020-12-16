@@ -68,7 +68,8 @@ int main(int argc, char *argv[])
    }
 
     free(filename);
-
+    fclose(ptr);
+    fclose(img);
     return 0;
 }
 
