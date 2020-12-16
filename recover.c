@@ -43,9 +43,10 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
             }
-            count++;
+            
             sprintf(filename, "%03i.jpg" , count);
             img = fopen(filename, "w");
+            count++;
 
             if(img!=NULL)
             {
@@ -55,9 +56,17 @@ int main(int argc, char *argv[])
         }
     }
 
-
+   if (ptr ==NULL)
+   {
+       fclose(ptr);
+   }
+   if(img==NULL)
+   {
+       fclose(img);
+   }
+   
     free(filename);
-    fclose(ptr);
+    
     return 0;
 }
 
