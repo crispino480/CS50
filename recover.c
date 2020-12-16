@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     if (ptr == NULL)
     {
         fprintf(stderr, "Unable to open file%s\n", argv[1]);
-        return 1;
+        return 2;
     }
 
 //read 3 bytes from file
