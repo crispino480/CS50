@@ -21,7 +21,7 @@ FILE *inputptr = fopen(argv[1], "r");
 if(inputptr==NULL)
 {
 fprintf(stderr, "Unable to open file%s\n", argv[0]);
-return 1;
+return 2;
 }
 
 BYTE buffer[512];
@@ -38,24 +38,24 @@ while(fread(buffer,1, 512,inputptr) == 512)
             {
                 fclose(outptr);
             }
-            
+
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
-                
+
                 if(outptr!=NULL)
                 {
                 fwrite(buffer, 1, 512, outptr);
                 count++;
                 fclose(outptr);
                 }
-                
-                
+
+
         }
 }
 
     free(file_name);
     fclose(inputptr);
     fclose(outptr);
-   
+
 return 0;
 }
