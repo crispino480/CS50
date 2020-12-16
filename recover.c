@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -43,7 +44,7 @@ int main(int argc, char *argv[])
             {
                 fclose(img);
             }
-            
+
             sprintf(filename, "%03i.jpg" , count);
             img = fopen(filename, "w");
             count++;
@@ -64,9 +65,9 @@ int main(int argc, char *argv[])
    {
        fclose(img);
    }
-   
+
     free(filename);
-    
+
     return 0;
 }
 
