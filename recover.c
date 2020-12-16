@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
               fread(buffer,1,sizeof(BYTE), ptr);
 
-    char* filename = malloc(sizeof(int) * 3) ;
+    char* filename = malloc(sizeof(int) * 3 + sizeof(char)*5) ;
             int count =  0;
          FILE* img = NULL;
 
