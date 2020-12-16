@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 //read 3 bytes from file
     BYTE buffer[512];
-              fread(buffer, 512, 1, ptr);
+              fread(buffer,1,sizeof(BYTE), ptr);
 
     char* filename = malloc(sizeof(int) * 3) ;
             int count =  0;
@@ -54,7 +54,6 @@ int main(int argc, char *argv[])
             {
                fwrite(buffer, sizeof(BYTE), 1,img);
             }
-
         }
     }
 
