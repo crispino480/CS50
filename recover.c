@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include<cs50.h>
 
 typedef uint8_t BYTE;
 
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
               fread(buffer, 512, 1, ptr);
 
-    char* filename = malloc(sizeof(char) * 8);
+    char* filename = malloc(sizeof(int) * 3) ;
             int count =  0;
          FILE* img = NULL;
 
