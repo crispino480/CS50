@@ -44,7 +44,7 @@ while(fread(buffer,512, 1,inputptr) == 1)
  free(file_name);
                 if(outptr!=NULL)
                 {
-                fwrite(buffer, 1, 512, outptr);
+                fwrite(buffer, 512, 1, outptr);
                 count++;
                 fclose(outptr);
                 }
