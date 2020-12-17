@@ -33,7 +33,7 @@ int isFound =0;
 //while(fread(buffer,512, 1,inputptr) == 1)
 while( fread(buffer, sizeof(buffer), 1, inputptr) ==1 ||feof(inputptr)==0) // Read blocks of 512 bytes, one at a time
 {
-    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0 && isFound==1)
+    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0 && isFound==0)
         {
             if(isFound==1)
             {
