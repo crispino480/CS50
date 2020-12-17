@@ -53,7 +53,7 @@ while(fread(buffer,1, 512,inputptr) == 512)
         }
 }
 
-    free(file_name);
+  //  free(file_name);
     fclose(inputptr);
    // fclose(outptr);
 
