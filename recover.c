@@ -31,12 +31,12 @@ FILE* outptr =NULL;
 int isFound =0;
 
 //while(fread(buffer,512, 1,inputptr) == 1)
-while(!feof(inputptr))
+while( fread(buffer, sizeof(buffer), 1, inputptr) ||feof(inputptr))
 {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     
     // Read blocks of 512 bytes, one at a time
-            fread(buffer, sizeof(buffer), 1, inputptr);
+            
         {
             if(isFound==1)
             {
