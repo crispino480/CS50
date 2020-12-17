@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-
+#include  <cs50.h>
 
 typedef uint8_t BYTE;
 
@@ -43,11 +43,10 @@ while( fread(buffer,sizeof(buffer), 1,inputptr)==1) // Read blocks of 512 bytes,
             {
                isFound=1; 
             }
-                char file_name[8];
+                char file_name[9];
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
-                 //fclose(outptr);
                 
                 if(outptr!=NULL)
                 {
