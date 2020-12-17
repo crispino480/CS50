@@ -1,63 +1,64 @@
+#include <cs50.h>       
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include  <cs50.h>
 
-typedef uint8_t BYTE;
+#define BUFFER_SIZE 512
 
-
-
-int main(int argc, char *argv[])
+int main(void)
 {
-
-if(argc !=2)
-{
- fprintf(stderr, "Usage: %s image\n",argv[0]);
- return 1;
-}
-
-FILE *inputptr = fopen(argv[1], "r");
-
-if(inputptr==NULL)
-{
-fprintf(stderr, "Unable to open file%s\n", argv[0]);
-return 2;
-}
-
-BYTE buffer[512];
-//char file_name[8];
-int count = 0;
-FILE* outptr =NULL;
-int isFound =0;
-
-//while(fread(buffer,512, 1,inputptr) == 1)
-fread(buffer,sizeof(buffer), 1,inputptr);
-while( fread(buffer,sizeof(buffer), 1,inputptr)==1) // Read blocks of 512 bytes, one at a time
-{
-    if ((buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff) && (buffer[3] & 0xf0) == 0xe0)
+    // open memory card file
+    FILE* input = fopen("card.raw", "r");
+    if (input == NULL)
+    {
+        printf("Could not open card.raw.\n");
+        return 2;
+    }
+    
+    // create buffer
+    unsigned char buffer[BUFFER_SIZE];
+    
+    // filename counter
+    int filecount = 0;
+    
+    FILE* picture = NULL; 
+    
+    // check if we've found a jpeg yet or not
+    int jpg_found = 0; //false
+    
+    // go through cardfile until there aren't any blocks left
+    while (fread(buffer, BUFFER_SIZE, 1, input) == 1)
+    {
+        // read first 4 bytes of buffer and see if jpg signature using bitwise on last byte
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xe0) == 0xe0)
         {
-            if(isFound==1)
+            if (jpg_found == 1)
             {
-                fclose(outptr);
-            }else
-            {
-               isFound=1; 
+                // We found the start of a new pic so close out current picture
+                fclose(picture);
             }
-                char file_name[9];
-                sprintf(file_name, "%03i.jpg", count);
-                outptr = fopen(file_name, "w");
-                count++;
-                
-                if(outptr!=NULL)
-                {
-                fwrite(&buffer, sizeof(buffer), 1, outptr);
-                
-                }
+            else
+            {
+                // jpg discovered and now we have the green light to write
+                jpg_found = 1;
+            }
+            
+            char filename[8];
+            sprintf(filename, "%03d.jpg", filecount);
+            picture = fopen(filename, "a");
+            filecount++;
         }
-}
+        
+        if (jpg_found == 1)
+        {
+            // write 512 bytes to file once we start finding jpgs
+            fwrite(&buffer, BUFFER_SIZE, 1, picture);
+        }
+        
+    }
 
-   fclose(inputptr);
-  fclose(outptr);
- 
-return 0;
+    // close files
+    fclose(input);
+    fclose(picture);
+
+    return 0;
 }
