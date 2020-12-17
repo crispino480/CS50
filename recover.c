@@ -42,9 +42,13 @@ while( fread(buffer, sizeof(buffer), 1, inputptr) ||feof(inputptr)==0) // Read b
             {
                isFound=1; 
             }
+            
+            if(isFound==1)
+            {
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
+            }
                 if(isFound==1)
                 {
                 fwrite(&buffer, 512, 1, outptr);
