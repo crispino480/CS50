@@ -41,22 +41,22 @@ while( fread(buffer,1, 512,inputptr)==512) // Read blocks of 512 bytes, one at a
                 fclose(outptr);
             }else
             {
-               isFound=1; 
+               isFound=1;
             }
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
-                
+
                 if(isFound==1)
                 {
-                fwrite(buffer,1, 512, outptr);
-                
+                fwrite(&buffer,1, 512, outptr);
+
                 }
         }
 }
 
    fclose(inputptr);
   fclose(outptr);
- 
+
 return 0;
 }
