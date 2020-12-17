@@ -57,7 +57,7 @@ while( fread(buffer,sizeof(buffer), 1,inputptr)==1) // Read blocks of 512 bytes,
 }
 
    fclose(inputptr);
-  // fclose(outptr);
+  fclose(outptr);
  
 return 0;
 }
