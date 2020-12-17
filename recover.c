@@ -31,7 +31,7 @@ FILE* outptr =NULL;
 int isFound =0;
 
 //while(fread(buffer,512, 1,inputptr) == 1)
-while( fread(buffer, sizeof(buffer), 1, inputptr) ||feof(inputptr))
+while( fread(buffer, sizeof(buffer), 1, inputptr) ||feof(inputptr)==0)
 {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     
