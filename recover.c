@@ -47,6 +47,7 @@ while( fread(buffer,sizeof(buffer), 1,inputptr)==1) // Read blocks of 512 bytes,
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
+                 fclose(outptr);
                 
                 if(outptr!=NULL)
                 {
