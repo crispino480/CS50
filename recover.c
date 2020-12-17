@@ -31,8 +31,8 @@ FILE* outptr =NULL;
 int isFound =0;
 
 //while(fread(buffer,512, 1,inputptr) == 1)
-fread(buffer,1, 512,inputptr);
-while( fread(buffer,1, 512,inputptr)==512) // Read blocks of 512 bytes, one at a time
+fread(buffer,512, 1,inputptr);
+while( fread(buffer,512, 1,inputptr)== 1) // Read blocks of 512 bytes, one at a time
 {
     if ((buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff) && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -49,14 +49,22 @@ while( fread(buffer,1, 512,inputptr)==512) // Read blocks of 512 bytes, one at a
 
                 if(isFound==1)
                 {
-                fwrite(&buffer,1, 512, outptr);
+                fwrite(&buffer,512, 1, outptr);
 
                 }
         }
 }
 
-   fclose(inputptr);
-  fclose(outptr);
+  if(inputptr==NULL)
+  {
+    fclose(inputptr);
+  }
+  if(outptr==NULL)
+  {
+    fclose(outptr);
+  }
+
+
 
 return 0;
 }
