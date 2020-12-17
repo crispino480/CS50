@@ -49,7 +49,7 @@ while( fread(buffer, sizeof(buffer), 1, inputptr) ==1 ||feof(inputptr)==0) // Re
                 
                 if(isFound==1)
                 {
-                fwrite(&buffer, 512, 1, outptr);
+                fwrite(&buffer, sizeof(buffer), 1, outptr);
                 
                 }
         }
