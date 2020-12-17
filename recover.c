@@ -26,23 +26,22 @@ return 2;
 
 BYTE buffer[512];
 char* file_name = malloc(sizeof(int)*3);
-//char file_name[8];
 int count = 0;
 FILE* outptr =NULL;
 
 
-while(fread(buffer,1, 512,inputptr) == 512)
+while(fread(buffer,512, 1,inputptr) == 1)
 {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
-            if(outptr!=NULL)
+            if(count==1)
             {
                 fclose(outptr);
             }
 
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
-
+ free(file_name);
                 if(outptr!=NULL)
                 {
                 fwrite(buffer, 1, 512, outptr);
@@ -55,7 +54,7 @@ while(fread(buffer,1, 512,inputptr) == 512)
 }
 
     free(file_name);
-    fclose(inputptr);
+   fclose(inputptr);
    // fclose(outptr);
 
 return 0;
