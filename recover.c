@@ -25,7 +25,7 @@ return 2;
 }
 
 BYTE buffer[512];
-//char file_name[8];
+char file_name[8];
 int count = 0;
 FILE* outptr =NULL;
 int isFound =0;
@@ -43,14 +43,13 @@ while( fread(buffer,sizeof(buffer), 1,inputptr)==1) // Read blocks of 512 bytes,
             {
                isFound=1; 
             }
-                char file_name[8];
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
                 
                 if(outptr!=NULL)
                 {
-                fwrite(&buffer, sizeof(buffer), 1, outptr);
+                fwrite(buffer, sizeof(buffer), 1, outptr);
                 
                 }
         }
