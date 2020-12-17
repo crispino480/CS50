@@ -41,17 +41,14 @@ while(fread(buffer,512, 1,inputptr) == 1)
             {
                isFound=1; 
             }
-
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
                 count++;
                 if(isFound==1)
                 {
-                fwrite(buffer, 512, 1, outptr);
+                fwrite(&buffer, 512, 1, outptr);
                 
                 }
-
-
         }
 }
 
