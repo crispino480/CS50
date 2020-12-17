@@ -25,7 +25,8 @@ return 2;
 }
 
 BYTE buffer[512];
-char* file_name = malloc(sizeof(int)*3);
+//char* file_name = malloc(sizeof(int)*3);
+char file_name[8];
 int count = 0;
 FILE* outptr =NULL;
 
