@@ -30,7 +30,7 @@ int count = 0;
 FILE* outptr =NULL;
 
 
-while(fread(buffer,512, 1,inputptr) == 1)
+while(fread(buffer,512, 1,inputptr) == 512)
 {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
