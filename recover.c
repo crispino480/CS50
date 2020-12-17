@@ -47,7 +47,7 @@ while( fread(buffer,1, 512,inputptr)==512) // Read blocks of 512 bytes, one at a
                 outptr = fopen(file_name, "w");
                 count++;
                 
-                if(outptr!=NULL)
+                if(isFound==1)
                 {
                 fwrite(buffer,1, 512, outptr);
                 
