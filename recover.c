@@ -28,21 +28,24 @@ BYTE buffer[512];
 char file_name[8];
 int count = 0;
 FILE* outptr =NULL;
-
+int isFound =0;
 
 while(fread(buffer,512, 1,inputptr) == 1)
 {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
-            if(count!=0)
+            if(isFound==1)
             {
                 fclose(outptr);
+            }else
+            {
+               isFound=1; 
             }
 
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
 
-                if(count !=0)
+                if(isFound==1)
                 {
                 fwrite(buffer, 512, 1, outptr);
                 
