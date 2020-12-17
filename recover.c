@@ -25,8 +25,8 @@ return 2;
 }
 
 BYTE buffer[512];
-//char* file_name = malloc(sizeof(int)*3);
-char file_name[8];
+char* file_name = malloc(sizeof(int)*3);
+//char file_name[8];
 int count = 0;
 FILE* outptr =NULL;
 
@@ -54,7 +54,7 @@ while(fread(buffer,1, 512,inputptr) == 512)
         }
 }
 
-  //  free(file_name);
+    free(file_name);
     fclose(inputptr);
    // fclose(outptr);
 
