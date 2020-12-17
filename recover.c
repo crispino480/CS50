@@ -42,11 +42,10 @@ while(fread(buffer,512, 1,inputptr) == 1)
                 sprintf(file_name, "%03i.jpg", count);
                 outptr = fopen(file_name, "w");
 
-                if(outptr!=NULL)
+                if(count !=1)
                 {
                 fwrite(buffer, 512, 1, outptr);
-                count++;
-                fclose(outptr);
+                
                 }
 
 
@@ -54,6 +53,7 @@ while(fread(buffer,512, 1,inputptr) == 1)
 }
 
    fclose(inputptr);
+   fclose(outptr);
  
 return 0;
 }
