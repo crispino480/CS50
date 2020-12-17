@@ -26,7 +26,7 @@ return 2;
 
 BYTE buffer[512];
 char file_name[8];
-int count = 0;
+int count = 1;
 FILE* outptr =NULL;
 int isFound =0;
 
