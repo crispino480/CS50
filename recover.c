@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include  <cs50.h>
+
+
+int main(int argc, char *argv[])
+{
+
+if(argc !=2)
+{
+ fprintf(stderr, "Usage: %s image\n",argv[0]);
+ return 1;
+}
+
+FILE *inputptr = fopen(argv[1], "r");
+
+if(inputptr==NULL)
+{
+fprintf(stderr, "Unable to open file%s\n", argv[0]);
+//return 1;
+}
+
+unsigned char buffer[512];
+char file_name[8];
+int count = 0;
+FILE* outptr =NULL;
+int isfound =0;
+
+//while(fread(buffer,512, 1,inputptr) == 1)
+//fread(buffer,512, 1,inputptr);
+while( fread(buffer,512, 1,inputptr) ==1) // Read blocks of 512 bytes, one at a time
+{
+    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+            if(isfound==1)
+            {
+                fclose(outptr);
+            }else
+            {
+               isfound=1;
+               
+            }
+                 sprintf(file_name, "%03i.jpg", count);
+                outptr = fopen(file_name, "w"); 
+               // count++;
+
+                if(isfound==1)
+                {
+                fwrite(&buffer,512, 1, outptr);
+
+                }
+        }
+}
+
+  
+    fclose(inputptr);
+    fclose(outptr);
+ 
+return 0;
+
+}
