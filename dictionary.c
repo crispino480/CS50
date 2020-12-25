@@ -4,8 +4,10 @@
 #include "dictionary.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <strings.h>
 #include <string.h>
-
+#include <math.h>
+#include <ctype.h>
 // Represents a node in a hash table
 typedef struct node
 {
@@ -15,7 +17,10 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 50;
+const unsigned int N = 100;
+
+//count word into the dictionary
+ int word_count = 0;
 
 // Hash table
 node *table[N];
@@ -24,14 +29,32 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    //to index the word in the table
+     int index = hash(word);
+
+     for(node *tmp = table[index]; tmp != NULL; tmp = tmp->next)
+     {
+         //return true if word match found in the table
+         if(strcasecmp(tmp->word,word) == 0)
+         {
+             return true;
+         }
+     }
+
     return false;
 }
 
 // Hashes word to a number
+//Hash function rom CS50,math using all the letter
 unsigned int hash(const char *word)
 {
     // TODO
-    return 0;
+    int sum=0;
+    for(int i = 0; i < strlen(word); i++)
+    {
+        sum+=tolower(word[i]);
+    }
+    return (sum%N);
 }
 
 // Loads dictionary into memory, returning true if successful else false
@@ -44,7 +67,7 @@ bool load(const char *dictionary)
     {
      return false;
     }
-       char word[46];
+       char word[LENGTH +1];
 
        //read words from the dictionary into word
         while(fscanf(inptr,"%s", word) !=EOF)
@@ -57,20 +80,20 @@ bool load(const char *dictionary)
                 }
                 //copy the word into the char field of that node
                  strcpy(n->word,word );
+                 n->next=NULL;
+                 word_count++;
 
                 // hash word to obtain it hash value
                int q = hash(word);
 
-               node *head = table[q];
-
-               if(head==NULL)
+               if(table[q]==NULL)
                {
                  table[q] = n;
                }
                else
                {
                    n->next=table[q];
-                   head=n;
+                   table[q]=n;
                }
             }
                  fclose(inptr);
@@ -81,12 +104,31 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return word_count;
 }
 
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
     // TODO
-    return false;
+    node *cursor =NULL;
+    node *tmp=NULL;
+
+    for(int i=0; i<N ; i++)
+    {
+     while(table[i]==NULL)
+     {
+         i++;
+     }
+     cursor = table[i];
+
+    while(cursor!=NULL)
+    {
+        tmp=cursor;
+        cursor=cursor->next;
+        free(tmp);
+    }
+
+    }
+    return true;
 }
