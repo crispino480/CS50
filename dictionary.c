@@ -125,7 +125,7 @@ bool unload(void)
         free(tmp);
         tmp=cursor;
     }
-
+     i=N-1;
     }
     return true;
 }
