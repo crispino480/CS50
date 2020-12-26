@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 500;
+const unsigned int N = 10000;
 
 //count word into the dictionary
  int word_count = 0;
@@ -28,22 +28,39 @@ node *table[N];
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    // TODO
-    //to index the word in the table
-     int index = hash(word);
+ int n = strlen(word);
+    char word_copy[LENGTH + 1];
+    for (int i = 0; i < n; i++)
+    {
+        word_copy[i] = tolower(word[i]);
+    }
+    // Adds null terminator to end string
+    word_copy[n] = '\0';
+    // Initializes index for hashed word
+    int h = hash(word_copy);
+    // Sets cursor to point to same address as hashtable index/bucket
+    node *cursor = table[h];
+    // Sets cursor to point to same location as head
 
-     for(node *tmp = table[index]; tmp != NULL; tmp = tmp->next)
-     {
-         //return true if word match found in the table
-         if(strcasecmp(tmp->word,word) == 0)
-         {
-             return true;
-         }
-     }
-
+    // If the word exists, you should be able to find in dictionary data structure.
+    // Check for word by asking, which bucket would word be in? hashtable[hash(word)]
+    // While cursor does not point to NULL, search dictionary for word.
+    while (cursor != NULL)
+    {
+        // If strcasecmp returns true, then word has been found
+        if (strcasecmp(cursor->word, word_copy) == 0)
+        {
+            return true;
+        }
+        // Else word has not yet been found, advance cursor
+        else
+        {
+            cursor = cursor->next;
+        }
+    }
+    // Cursor has reached end of list and word has not been found in dictionary so it must be misspelled
     return false;
 }
-
 // Hashes word to a number
 //Hash function rom CS50,math using all the letter
 unsigned int hash(const char *word)
