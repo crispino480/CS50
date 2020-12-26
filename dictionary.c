@@ -39,10 +39,9 @@ while(cursor !=NULL)
          {
              return true;
          }
-          else
-        {
+        
             cursor = cursor->next;
-        }
+        
 
 }
     return false;
