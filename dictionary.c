@@ -99,7 +99,6 @@ bool load(const char *dictionary)
                    table[q]=n;
                }
                word_count++;
-               free(n);
             }
                     fclose(inptr);
                     return true;
@@ -116,22 +115,15 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *cursor =NULL;
-    node *tmp=NULL;
-
     for(int i=0; i<N ; i++)
     {
-     while(table[i]==NULL)
-     {
-         i++;
-     }
-     cursor = table[i];
-
+       node *cursor = table[i];
+       node *tmp = cursor;
     while(cursor!=NULL)
     {
-        tmp=cursor;
         cursor=cursor->next;
         free(tmp);
+        tmp=cursor;
     }
 
     }
