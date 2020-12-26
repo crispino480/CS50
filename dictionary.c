@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 30000;
+const unsigned int N = 5000;
 
 //count word into the dictionary
  int word_count = 0;
@@ -32,32 +32,32 @@ bool check(const char *word)
     //to index the word in the table
      int index = hash(word);
      node *cursor = table[index];
-while(cursor !=NULL)
- {
+    while (cursor != NULL)
+    {
 
-         if(strcasecmp(cursor->word,word) == 0)
+         if (strcasecmp(cursor->word, word) == 0)
          {
              return true;
          }
-        
-            cursor = cursor->next;
-        
 
-}
+            cursor = cursor->next;
+
+
+    }
     return false;
- 
+
 }
 // Hashes word to a number
 //Hash function rom CS50,math using all the letter
 unsigned int hash(const char *word)
 {
     // TODO
-    int sum=0;
-    for(int i = 0; i < strlen(word); i++)
+    int sum = 0;
+    for (int i = 0; i < strlen(word); i++)
     {
-        sum+=tolower(word[i]);
+        sum += tolower(word[i]);
     }
-    return (sum%N);
+    return (sum % N);
 }
 
 // Loads dictionary into memory, returning true if successful else false
@@ -65,39 +65,39 @@ bool load(const char *dictionary)
 {
     // TODO
     //To open th dictionary
-    FILE *inptr = fopen(dictionary,"r");
-    if(inptr == NULL)
+    FILE *inptr = fopen(dictionary, "r");
+    if (inptr == NULL)
     {
-     return false;
+        return false;
     }
-       char word[LENGTH +1];
+       char word[LENGTH + 1];
 
        //read words from the dictionary into word
-        while(fscanf(inptr,"%s", word) !=EOF)
+        while (fscanf(inptr, "%s", word) != EOF)
              {
                  //reading a word
                node *n = malloc(sizeof(node));
-               if(n==NULL)
+               if (n == NULL)
                 {
                  unload();
                  return false;
                 }
                 //copy the word into the char field of that node
-                 strcpy(n->word,word );
-                n->next=NULL;
+                 strcpy(n->word, word);
+                n->next = NULL;
 
                 // hash word to obtain it hash value
                int q = hash(word);
-      
-               if(table[q]==NULL)
+
+               if (table[q] == NULL)
                {
                  table[q] = n;
                }
                else
                {
-                   n->next=table[q];
-                   table[q]=n;
-               }
+                   n->next = table[q];
+                   table[q] = n;
+             }
                word_count++;
             }
                     fclose(inptr);
@@ -115,17 +115,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for(int i=0; i<N ; i++)
+    for (int i = 0; i < N ; i++)
     {
-       node *cursor = table[i];
-       node *tmp = cursor;
-    while(cursor!=NULL)
-    {
-        cursor=cursor->next;
-        free(tmp);
-        tmp=cursor;
-    }
-     i=N-1;
+        node *cursor = table[i];
+        node *tmp = cursor;
+        while (cursor != NULL)
+        {
+            cursor = cursor->next;
+            free(tmp);
+            tmp = cursor;
+        }
     }
     return true;
 }
