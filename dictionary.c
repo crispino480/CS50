@@ -17,7 +17,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = 10000;
+const unsigned int N = 30000;
 
 //count word into the dictionary
  int word_count = 0;
@@ -28,38 +28,25 @@ node *table[N];
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
- int n = strlen(word);
-    char word_copy[LENGTH + 1];
-    for (int i = 0; i < n; i++)
-    {
-        word_copy[i] = tolower(word[i]);
-    }
-    // Adds null terminator to end string
-    word_copy[n] = '\0';
-    // Initializes index for hashed word
-    int h = hash(word_copy);
-    // Sets cursor to point to same address as hashtable index/bucket
-    node *cursor = table[h];
-    // Sets cursor to point to same location as head
+     // TODO
+    //to index the word in the table
+     int index = hash(word);
+     node *cursor = table[index];
+while(cursor !=NULL)
+ {
 
-    // If the word exists, you should be able to find in dictionary data structure.
-    // Check for word by asking, which bucket would word be in? hashtable[hash(word)]
-    // While cursor does not point to NULL, search dictionary for word.
-    while (cursor != NULL)
-    {
-        // If strcasecmp returns true, then word has been found
-        if (strcasecmp(cursor->word, word_copy) == 0)
-        {
-            return true;
-        }
-        // Else word has not yet been found, advance cursor
-        else
+         if(strcasecmp(cursor->word,word) == 0)
+         {
+             return true;
+         }
+          else
         {
             cursor = cursor->next;
         }
-    }
-    // Cursor has reached end of list and word has not been found in dictionary so it must be misspelled
+
+}
     return false;
+ 
 }
 // Hashes word to a number
 //Hash function rom CS50,math using all the letter
@@ -89,6 +76,7 @@ bool load(const char *dictionary)
        //read words from the dictionary into word
         while(fscanf(inptr,"%s", word) !=EOF)
              {
+                 //reading a word
                node *n = malloc(sizeof(node));
                if(n==NULL)
                 {
@@ -98,11 +86,10 @@ bool load(const char *dictionary)
                 //copy the word into the char field of that node
                  strcpy(n->word,word );
                  n->next=NULL;
-                 word_count++;
 
                 // hash word to obtain it hash value
                int q = hash(word);
-
+      
                if(table[q]==NULL)
                {
                  table[q] = n;
@@ -112,8 +99,10 @@ bool load(const char *dictionary)
                    n->next=table[q];
                    table[q]=n;
                }
+               n->next=NULL;
+               word_count++;
             }
-                 fclose(inptr);
+                 //fclose(inptr);
                     return true;
 }
 
