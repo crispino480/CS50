@@ -85,7 +85,7 @@ bool load(const char *dictionary)
                 }
                 //copy the word into the char field of that node
                  strcpy(n->word,word );
-                 n->next=NULL;
+                //n->next=NULL;
 
                 // hash word to obtain it hash value
                int q = hash(word);
