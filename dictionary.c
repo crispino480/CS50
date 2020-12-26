@@ -85,7 +85,7 @@ bool load(const char *dictionary)
                 }
                 //copy the word into the char field of that node
                  strcpy(n->word,word );
-                //n->next=NULL;
+                n->next=NULL;
 
                 // hash word to obtain it hash value
                int q = hash(word);
@@ -99,10 +99,10 @@ bool load(const char *dictionary)
                    n->next=table[q];
                    table[q]=n;
                }
-               n->next=NULL;
                word_count++;
+               free(n);
             }
-                 //fclose(inptr);
+                    fclose(inptr);
                     return true;
 }
 
