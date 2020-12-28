@@ -7,17 +7,17 @@ from cs50 import get_int
 
 height = get_int("Height: ")
 
-if height > 0 and height < 9 :
-
-    for i in range(height) :
-
-        for j in range(height+1) :
-            if j >= height-i :
-                print("#",end="")
-            else:
-               print(" ",end="")
-        print()
-else :
+while height < 1 or height > 8:
 
     height = get_int("Height: ")
+    
+for i in range(height) :
+
+    for j in range(height+1) :
+        if j >= height-i :
+            print("#",end="")
+        else:
+             print(" ",end="")
+    print()
+   
 
