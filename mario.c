@@ -10,7 +10,7 @@ int main(void)
     do
     {
 
-       printf("How tall is your pyramid\n");
+        printf("How tall is your pyramid\n");
         height = get_int("height: ");
 
     }
@@ -20,17 +20,18 @@ int main(void)
 
     for (int i = 0 ; i < height ; i++)
     {
-for (int j = 1 ; j <= height ; j++)
+        for (int j = 1 ; j <= height ; j++)
         {
-         if ( j >= height - i )
-            {
-             printf("#");
-             }
+            if (j >= height - i)
+            { 
+                // print space from left to right, top to bottom
+                printf("#");
+            }
             else
             {
-             printf(" ");
-              }
-         }
-         printf("\n");
-   }
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
 }
