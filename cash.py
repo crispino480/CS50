@@ -1,4 +1,4 @@
-#Implement a program that calculates the minimum number of coins required to give a user change.
+# Implement a program that calculates the minimum number of coins required to give a user change.
 from cs50 import get_float
 
 def main():
