@@ -5,10 +5,10 @@ from cs50 import get_string
 
 while True:
     s = get_string("Number: ")
-    if len(s) in [13,15,16]:
+    if len(s) in [10,13,15,16]:
         break
     else:
-        print("INVALID1")
+        print("INVALID")
         
 # reverse the user entry and list every digit
 cc =list(s)[::-1]
@@ -66,4 +66,4 @@ if checksum % 10 == 0:
     else:
         print("VISA")
 else:
-    print("INVALID2")
+    print("INVALID")
