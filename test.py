@@ -8,7 +8,8 @@ while True:
         print("INVALID")
 # list every second digits in the caracteres from left to right       
 c =list(s)[::-2]
-del list(s)[::-2]
-e =list(s)-c
+for cf in c:
+    list(s).remove(cf)
+e =list(s)
 print(c)
 print(e)
