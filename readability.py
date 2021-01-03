@@ -7,21 +7,15 @@ def main():
 
     # To get user input
     s = userInput()
-    print(f"{s}")
-    lt = float(lettercount(s))
-    print(f"{lt}")
-    w = float(wordcount(s))
-    print(f"{w}")
-    st = float(sentencecount(s))
-    print(f"{st}")
+    lt = round(float(lettercount(s)))
+    w = round(float(wordcount(s)))
+    st = round(float(sentencecount(s)))
 
     L = (lt*100/w)
-    print(f"{L}")
-
     Si = (st*100/w)
-    print(f"{Si}")
-    index = int((0.0588*L - 0.296*Si - 15.8))
-    print(f"{index}")
+
+    index = round((0.0588*L - 0.296*Si - 15.8))
+
     if index < 1 :
         print(" Before Grade 1")
 
@@ -35,36 +29,34 @@ def main():
 
 # this function count the number of sentences in a text
 def sentencecount(t):
-    counts=1
-    i=0
-    for i in range(len(t)):
-        if t[i] in ['.','!','?']:
-            counts +=counts
-    return counts-1
+    counts=0
+    for each_character in list(t):
+        if each_character in ['.','!','?']:
+            counts=counts +1
+    return counts
 
 
 # this function count the number of words in a sentence
 def wordcount(t):
     countw=1
-    i=0
-    for i in range(len(t)):
-        if t[i] in [' ']:
+    for each_character in list(t):
+        if each_character in [' '] :
             # count letters
-            countw += countw
+            countw = countw + 1
     return  countw
 
 
 
 # this function count the number of letters in a sentence
 def lettercount(t):
-    countl=1
-    i=0
+    countl=0
+
     for i in range(len(t)):
         # check if the input is a letter
         if t[i].isalpha():
             # count letters
-            countl+= countl
-    return countl-1
+            countl=countl+1
+    return countl
 
 
 
