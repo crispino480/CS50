@@ -43,22 +43,27 @@ def main():
     print("No match")
     csv_file.close()
 
-
+# this function return the longest sequence of STR
 def max_length_string(seq, subseq):
     length1 = 0
+    # length of a subsequence
     l2 = len(subseq)
+    # length of a sequence
     l1 = len(seq)
+    #iterate over the sequence length
     for x in range(l1):
+        # count STR when a match is found
         counter = 0
         while True:
             i = x + l2 * counter
             j = i + l2
+            # check and count if the subsequence read from i to j match the STR
             if seq[i:j] == subseq:
                 counter += 1
             else:
 
                 break
-
+        # return the maximum read
         length1 = max(length1, counter)
 
 
