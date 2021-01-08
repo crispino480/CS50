@@ -49,17 +49,17 @@ def max_length_string(seq, subseq):
     l2 = len(subseq)
     l1 = len(seq)
     for x in range(l1):
-        count = 0
+        counter = 0
         while True:
-            start = x + l2 * count
-            end = start + l2
-            if seq[start:end] == subseq:
-                count += 1
+            i = x + l2 * counter
+            j = i + l2
+            if seq[i:j] == subseq:
+                counter += 1
             else:
 
                 break
 
-        length1 = max(length1, count)
+        length1 = max(length1, counter)
 
 
     return length1
