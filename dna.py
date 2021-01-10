@@ -44,7 +44,7 @@ def main():
     csv_file.close()
 
 # this function return the longest sequence of STR
-def max_length_string(seq, subseq):
+    def max_length_string(seq, subseq):
     length1 = 0
     # length of a subsequence
     l2 = len(subseq)
