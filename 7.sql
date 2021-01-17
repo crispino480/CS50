@@ -1,4 +1,3 @@
-CREATE INDEX title_index ON movies (title)
 SELECT title,rating FROM movies
  JOIN ratings ON movies.id = ratings.movie_id
  WHERE year = '2010'
