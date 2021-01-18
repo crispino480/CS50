@@ -56,9 +56,9 @@ FROM  phone_calls WHERE year = 2020 AND month = 7 AND day = 28 AND duration < 60
 SELECT id FROM flights WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC;
 
 -- To output passport from passenger whose flights in earliest on the July 29th
-SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights 
+SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights
 WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC);
 
 -- Earliest flight people's name on July 29th,
-SELECT name FROM people WHERE people.passport_number IN (SELECT passport_number FROM passengers WHERE flight_id 
+SELECT name FROM people WHERE people.passport_number IN (SELECT passport_number FROM passengers WHERE flight_id
 IN (SELECT id FROM flights WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC)) ORDER BY name;
