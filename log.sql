@@ -68,7 +68,7 @@ Roy       | 4408372428      | (122) 555-4581
 Russell   | 3592750733      | (770) 555-1861*
 Victoria  | 9586786673      | (338) 555-6650
 
--- to Output the destination on July 29 by Ernest(passport number:5773159633), since Russell is exclude as having several destination
+-- to Output the destination on July 29 by Ernest(passport number:5773159633), since Russell is excluded as having several destination
 SELECT flights.destination_airport_id, flights.origin_airport_id, flights.hour, flights.day, flights.month, flights.year FROM flights
 JOIN passengers ON flights.id = passengers.flight_id
 JOIN people ON passengers.passport_number = people.passport_number
@@ -94,11 +94,5 @@ SELECT * FROM people WHERE phone_number = '(375) 555-8161';
 id     | name     | phone_number   | passport_number | license_plate
 864400 | Berthold | (375) 555-8161 |                 | 4V16VO0
 
--- To output passport from passenger whose flights in earliest on the July 29th
-SELECT passengers.flight_id, passport_number, seat FROM passengers WHERE flight_id IN (SELECT id FROM flights
-WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC);
 
--- Earliest flight people's name on July 29th,
-SELECT name FROM people WHERE people.passport_number IN (SELECT passport_number FROM passengers WHERE flight_id
-IN (SELECT id FROM flights WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC)) ORDER BY name;
 
