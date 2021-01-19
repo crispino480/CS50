@@ -62,3 +62,9 @@ WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC);
 -- Earliest flight people's name on July 29th,
 SELECT name FROM people WHERE people.passport_number IN (SELECT passport_number FROM passengers WHERE flight_id
 IN (SELECT id FROM flights WHERE year = 2020 AND month = 7 AND day = 29 ORDER BY hour ASC,minute ASC)) ORDER BY name;
+
+-- to Output the destination on July 29 by Russell
+SELECT DISTINCT destination_airport_id FROM flights
+JOIN passengers ON flights.id = passengers.flight_id
+JOIN people ON passengers.passport_number = people.passport_number
+WHERE people.passport_number = 3592750733 AND flights.month = 7 AND flights.day = 29;
