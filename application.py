@@ -79,7 +79,7 @@ def buy():
     if request.method == "POST":
 
         try:
-            share = request.form.get("shares")
+            share = int(request.form.get("shares"))
         except ValueError:
             return apology("Must be positive integer", 400)
 
