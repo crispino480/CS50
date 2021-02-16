@@ -90,7 +90,11 @@ def buy():
 
         # Purchase value
         quote = lookup(request.form.get("symbol"))
-        share = request.form.get("shares")
+        # reference: https://cs50.stackexchange.com/questions/29117/pset7-fractions-being-rejected-causing-buy-to-fail
+        try:
+            share = request.form.get("shares")
+        except ValueError:
+            return apology("Must be positive integer", 400)
 
         if not quote:
             return apology(" invalid symbol")
