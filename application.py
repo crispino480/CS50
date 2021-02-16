@@ -217,13 +217,12 @@ def register():
 
         #Ensure user is unique
         rows = db.execute("SELECT * FROM users WHERE username = :username", username=request.form.get("username"))
-
-        #add the user and the hash pasword to the database
-        load = db.execute("INSERT INTO users (username,hash) VALUES(:username, :hash)",username=request.form.get("username"),hash=generate_password_hash(request.form.get("password")))
-
         # Ensure the username created is unique in the database
         if len(rows) >= 1:
             return apology("username already exist",400)
+
+        #add the user and the hash pasword to the database
+        load = db.execute("INSERT INTO users (username,hash) VALUES(:username, :hash)",username=request.form.get("username"),hash=generate_password_hash(request.form.get("password")))
 
         # Log the user and remember which user has logged in
         #session["user_id"] = rows[0]["id"]
