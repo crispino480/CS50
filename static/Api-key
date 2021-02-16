@@ -1,0 +1,72 @@
+API_key: pk_d59b76477c3d40a48910f567939a8bc9
+export API_KEY=value
+export API_KEY=pk_d59b76477c3d40a48910f567939a8bc9
+
+@login_required
+def buy():
+    """Buy shares of stock"""
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+
+        # Ensure symbol and shares is submitted
+        if not request.form.get("symbol") :
+            return apology("must provide symbol", 400)
+
+        elif not request.form.get("shares"):
+            return apology("must provide shares", 400)
+
+        if  int(request.form.get("shares")) < 1:
+            return apology(" INVALID SELECTION,  AT LEAST ONE(1) SHARE REQUIRED")
+
+        # Purchase value
+        quote = lookup(request.form.get("symbol"))
+        share = request.form.get("shares")
+
+        if not quote:
+            return apology(" invalid symbol")
+
+        # Get the cost of that stock
+        cost = int(share)*quote["price"]
+
+        # Query the user cash balance
+        balance = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
+        if cost > balance[0]["cash"]:
+            return apology(" Not Enough cash, Update your Balance")
+
+        # update New Balance in users table
+        db.execute("UPDATE users SET cash=cash-:cost WHERE id=:id", cost=cost, id=session["user_id"]);
+
+        # add transaction to transaction table
+        new_transaction = db.execute("INSERT INTO transactions (id,stock, quantity, price) VALUES (:user_id, :stock, :quantity, :price)",
+        user_id=session["user_id"], stock=quote["symbol"], quantity=int(request.form.get("shares")), price=quote['price'])
+
+
+        return redirect("/")
+
+
+    return render_template("buy.html")
+
+
+@app.route("/history")
+
+**************************
+new_transaction = db.execute("INSERT INTO transactions (id,username,stock, quantity, price) VALUES (:user_id,:username, :stock, :quantity, :price)",
+        user_id=session["user_id"],username=db.execute("SELECT username FROM users WHERE id = :uid", uid=int(session['user_id'])[0]["username"],
+        stock=quote["symbol"], quantity=int(request.form.get("shares")), price=quote['price'])
+*****************
+
+# add transaction to transaction table
+        new_transaction = db.execute("INSERT INTO transactions (id,stock, quantity, price) VALUES (:user_id, :stock, :quantity, :price)",
+        user_id=session["user_id"], stock=quote["symbol"], quantity=int(request.form.get("shares")), price=quote['price'])
+
+
+     # https://www.youtube.com/watch?v=Ij4wXdedRVY
+        CREATE TABLE transaction (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    user_id INTERGER NOT NULL,
+    symbol TEXT NOT NULL,
+    shares INTEGER NOT NULL,
+    quote NUMERIC NOT NULL,
+    transacted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
