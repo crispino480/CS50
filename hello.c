@@ -1,3 +1,6 @@
+# this code is written in C, 
+# the code display hello world at the command line
+
 #include <stdio.h>
 #include <cs50.h>
 
