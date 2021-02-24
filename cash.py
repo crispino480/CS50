@@ -1,5 +1,14 @@
-# Implement a program that calculates the minimum number of coins required to give a user change.
-#Assuming that the only coins available are quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢).
+ # Implement a program that calculates the minimum number of coins required to give a user change.
+ # Assuming that the only coins available are quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢).
+ # Expected outcome form the command line:
+    
+ #  $ ./cash
+ #  Change owed: -0.41
+ #  Change owed: foo
+ #  Change owed: 0.41
+ #               4    
+
+
 from cs50 import get_float
 
 def main():
