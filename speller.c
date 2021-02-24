@@ -1,4 +1,9 @@
-// Implements a spell-checker
+/* Implement a program that spell-checks a file, a la the below, using a hash table
+  a program that’s designed to spell-check a file after loading a dictionary of words from disk into memory. 
+  That dictionary, meanwhile, is implemented in a file called dictionary.c
+  The prototypes for the functions therein, meanwhile, are defined not in dictionary.c itself but in dictionary.h instead. 
+
+*/
 
 #include <ctype.h>
 #include <stdio.h>
