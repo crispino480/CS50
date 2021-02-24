@@ -3,6 +3,13 @@ To do so, we usea key: in this case, a mapping of each of the letters of the alp
 it should correspond to when we encrypt it. To “decrypt” the message, the receiver of the message
 would need to know the key, so that they can reverse the process:translating the encrypt text
 back into the original message .
+
+expected output from the command line:
+
+$ ./substitution YTNSHKVEFXRBAUQZCLWDMIPGJO
+plaintext:  HELLO
+ciphertext: EHBBQ
+
 */
 
 #include <stdio.h>
