@@ -1,3 +1,13 @@
+# This program is Written in C
+# The designed program prompts the user for a credit card number and then reports (via printf) whether it is a valid American Express, 
+# MasterCard, or Visa card number, per the definitions of each’s format herein. 
+# The program then output program’s last line of output  AMEX\n or MASTERCARD\n or VISA\n or INVALID\n
+# Expected output fromt the command line: 
+#      $ ./credit
+#      Number: 4003600000000014
+#      VISA
+
+
 from cs50 import get_string
 
 
