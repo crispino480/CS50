@@ -1,3 +1,12 @@
+# IT implements a program that computes the approximate grade level needed to comprehend some text.
+# This program is written in C
+# The Algorythm used in the program is base on the readability test is the Coleman-Liau index
+# Expected Outcome from the command line:
+#    $ ./readability
+#    Text: Congratulations! Today is your day. You're off to Great Places! You're off and away!
+#    Grade 3
+
+
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
