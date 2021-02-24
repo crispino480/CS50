@@ -1,3 +1,15 @@
+# This program  is written in C
+# Caesar used to “encrypt onfidential messages by shifting each letter therein by some number of places. 
+# For instance, he might write A as B, B as C, C as D, …, and, wrapping around alphabetically, Z as A. 
+# And so, to say HELLO to someone, Caesar might write IFMMP.  Upon receiving such messages from Caesar, 
+# recipients would have to “decrypt” them by shifting letters in the opposite direction by the same number of places.
+# This program encrypt message, output fromt the command line:
+#
+#     $ ./caesar 13
+#     plaintext:  hello, world
+#     ciphertext: uryyb, jbeyq
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
