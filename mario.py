@@ -1,5 +1,11 @@
 # Write, in a file called mario.py in ~/pset6/mario/more/,
-# a program that recreates these half-pyramids using hashes (#) for blocks
+# recreate pyramids in C, albeit in text, using hashes (#) for bricks, a la the below. 
+# Each hash is a bit taller than it is wide, so the pyramids themselves are also be taller than they are wide.
+      #  #
+     ##  ##
+    ###  ###
+   ####  ####
+
 from cs50 import get_int
 
 while True:
