@@ -1,3 +1,39 @@
+/*
+ This program is written in C
+ This Impliment a program that runs a runoff election, rank the candidate based on the voter choice
+  Expecetd outcome from the command line:
+  
+  ./runoff Alice Bob Charlie
+Number of voters: 5
+
+# Output each voter choice
+Rank 1: Alice
+Rank 2: Charlie
+Rank 3: Bob
+
+Rank 1: Alice
+Rank 2: Charlie
+Rank 3: Bob
+
+Rank 1: Bob
+Rank 2: Charlie
+Rank 3: Alice
+
+Rank 1: Bob
+Rank 2: Charlie
+Rank 3: Alice
+
+Rank 1: Charlie
+Rank 2: Alice
+Rank 3: Bob
+
+# Output the Winner
+Alice
+ 
+
+*/
+
+
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
