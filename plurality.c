@@ -1,3 +1,18 @@
+/* This program is written in C
+  Implement a program that runs a plurality election 
+  Expected outcome:
+  
+  $ ./plurality Alice Bob Charlie
+   Number of voters: 4
+   Vote: Alice
+   Vote: Bob
+   Vote: Charlie
+   Vote: Alice  
+   
+   # output the winner
+   Alice
+
+*/
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
