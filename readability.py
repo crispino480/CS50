@@ -1,4 +1,11 @@
-# a program that first asks the user to type in some text, and then outputs the grade level for the text, according to the Coleman-Liau formula
+# This program is written in Python
+# It implements a program that computes the approximate grade level needed to comprehend some text.
+# This program is written in C
+# The Algorythm used in the program is base on the readability test is the Coleman-Liau index
+# Expected Outcome from the command line:
+#    $ ./readability
+#    Text: Congratulations! Today is your day. You're off to Great Places! You're off and away!
+#    Grade 3
 
 from cs50 import get_string
 from cs50 import get_float
