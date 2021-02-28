@@ -1,5 +1,13 @@
-# Write, in a file called mario.py in ~/pset6/mario/more/,
+# Written in Python, in a file called mario.py in ~/pset6/mario/more/,
 # a program that recreates these half-pyramids using hashes (#) for blocks
+#  Expected output from the command line:
+#  $ ./mario
+#   Height: 4
+#    #  #
+#   ##  ##
+#  ###  ###
+# ####  ####
+
 from cs50 import get_int
 
 while True:
