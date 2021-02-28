@@ -4,7 +4,7 @@
 # The program then output program’s last line of output  AMEX\n or MASTERCARD\n or VISA\n or INVALID\n
 # Expected output fromt the command line: 
 #      $ ./credit
-#      Number: 4003600000000014
+#      Number:  4003600000000014
 #      VISA
 
 
