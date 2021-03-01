@@ -1,3 +1,7 @@
+# Written in Flask using Python,SQL, Javascripts
+# This WebPage application to keep track of friends’ birthdays.
+# When the / route is requested via GET, this web application displays, in a table, all of the people in your database along with their birthdays.
+# When the / route is requested via POST, this web application  add a new birthday to your database and then re-render the index page.
 import os
 
 from cs50 import SQL
