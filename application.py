@@ -1,3 +1,4 @@
+# Program is written in Flask ; Implement a website via which users can “buy” and “sell” stocks,
 import os
 
 from cs50 import SQL
