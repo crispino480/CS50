@@ -38,7 +38,7 @@ layout.html is the page's head, it will be use as an extension to create pages t
 
 <p>
 froshims.db is the database created with 5 tables: id, usermane, email, telephone and comments
-![database](https://github.com/crispino480/forimages/blob/main/database.png)
+![database.db](https://github.com/crispino480/forimages/blob/main/database.png)
 </p>
 
 <p>
