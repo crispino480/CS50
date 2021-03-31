@@ -2,12 +2,19 @@
 #### Video Demo:  <https://youtu.be/d6Wip_Qynww>
 #### Description:
 <p>
+  
+  ## Overview
 MY Webpage can be add to a production page to collect feedback form users,
 The information provided by the end user  will then be stored into a database
 </p>
 
 <p>
-The webpage in this project is designed to gather and store comments or feedbacks
+  ## purpose
+- The webpage in this project is designed to gather and store comments or feedbacks; 
+ </p>
+ 
+ <p>
+ ## Tools used: 
 This simple  web application was created using Flask in the cs50 IDE available for cs50 student
 </p>
 
