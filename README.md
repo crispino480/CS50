@@ -19,7 +19,7 @@ The html files used for this project in the templates folder are index.html,
 layout.html; the Css file and image used for the background are located in the static folder.
 </p>
 
-![Image of wepage](https://onedrive.live.com/?cid=37986AAEAB444274&id=37986AAEAB444274%2120942&parId=37986AAEAB444274%2120941&o=OneUp)
+![Image of wepage](https://drive.google.com/file/d/1jFtpxRL3whbHopaAuZ9GyUpFLG7gIJ0i/view?usp=sharing)
 
 <p>
 This web application does not do any validation but rather, will make sure for any submission
