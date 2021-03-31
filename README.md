@@ -1,6 +1,5 @@
 # CS50 Final-Project : " submit your comment "
 #### Video Demo:  <https://youtu.be/d6Wip_Qynww>
-### Video : ![Video Demo](https://onedrive.live.com/?cid=37986AAEAB444274&id=37986AAEAB444274%2120942&parId=37986AAEAB444274%2120941&o=OneUp/GIF)
 #### Description:
 <p>
 MY Webpage can be add to a production page to collect feedback form users,
@@ -12,6 +11,7 @@ The webpage in this project is designed to gather and store comments or feedback
 This simple  web application was created using Flask in the cs50 IDE available for cs50 student
 </p>
 
+![Image of wepage](https://octodex.github.com/images/yaktocat.png)
 <p>
 The files used here  are application.py, where the application and routes are created,
 froshims.db is the database borrowed from a previous cs50 project
@@ -27,19 +27,27 @@ all fields has been filled up.Once submitted, the form will send the provided in
 <p>
 Index.html extends layout.html in its form, then there is a use of the html "div" tag for divions in the layout
 of this page, each divions include an input tag for information we are collecting from the users
-
+![index.html](https://github.com/crispino480/forimages/blob/main/index.html.png)
 </p>
 
 <p>
 layout.html is the page's head, it will be use as an extension to create pages to this webpage
+
+![layout.html](https://github.com/crispino480/forimages/blob/main/layout.html.png)
 </p>
 
 <p>
 froshims.db is the database created with 5 tables: id, usermane, email, telephone and comments
+![database](https://github.com/crispino480/forimages/blob/main/database.png)
 </p>
 
 <p>
 styles.css is the css stylesheet referenced in layout.html, which contents all the webpage styling
 </p>
 
-![Image of Yaktocat](https://github.com/crispino480/forimages/blob/main/layout.html.png)
+<p>
+In application.py, there is a submit function; if a POST request is submitted via the form, we use the request.form.get
+to capture the user input and validate that no empty entry has been submitted, for each entry
+
+Once the validation has been passed, the input provided is load to the database via the variable load.
+</p>
