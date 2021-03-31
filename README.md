@@ -9,12 +9,12 @@ The information provided by the end user  will then be stored into a database
 </p>
 
 <p>
-  ## purpose
+  ##purpose
 - The webpage in this project is designed to gather and store comments or feedbacks; 
  </p>
  
  <p>
- ## Tools used: 
+ ##Tools used: 
 This simple  web application was created using Flask in the cs50 IDE available for cs50 student
 </p>
 
