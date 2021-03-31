@@ -10,13 +10,13 @@ The information provided by the end user  will then be stored into a database
 
 ## purpose
 <p>
-- The webpage in this project is designed to gather and store comments or feedbacks; it can be shared with 
+ -The webpage in this project is designed to gather and store comments or feedbacks; it can be shared with 
  clients to gather input from them
  </p>
  
  ## Tools used: 
 <p>
-- This project is developed in ****CS50 IDE**** An integrated development environment, as a software application that provides 
+ -This project is developed in ****CS50 IDE**** An integrated development environment, as a software application that provides 
  comprehensive facilities to computer programmers for software development.
 
 **![Image of wepage](https://github.com/crispino480/forimages/blob/main/mywebpage.png)**
