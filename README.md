@@ -8,12 +8,12 @@ MY Webpage can be add to a production page to collect feedback form users,
 The information provided by the end user  will then be stored into a database
 </p>
 
-##purpose
+## purpose
 <p>
 - The webpage in this project is designed to gather and store comments or feedbacks; 
  </p>
  
- ##Tools used: 
+ ## Tools used: 
  <p>
 This simple  web application was created using Flask in the cs50 IDE available for cs50 student
 </p>
