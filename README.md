@@ -27,6 +27,7 @@ all fields has been filled up.Once submitted, the form will send the provided in
 <p>
 Index.html extends layout.html in its form, then there is a use of the html "div" tag for divions in the layout
 of this page, each divions include an input tag for information we are collecting from the users
+  
 ![index.html](https://github.com/crispino480/forimages/blob/main/index.html.png)
 </p>
 
@@ -39,6 +40,8 @@ layout.html is the page's head, it will be use as an extension to create pages t
 <p>
 froshims.db is the database created with 5 tables: id, usermane, email, telephone and comments
 ![database.db](https://github.com/crispino480/forimages/blob/main/database.png)
+  
+  ![database.db](https://github.com/crispino480/forimages/blob/main/database.png)
 </p>
 
 <p>
@@ -50,4 +53,6 @@ In application.py, there is a submit function; if a POST request is submitted vi
 to capture the user input and validate that no empty entry has been submitted, for each entry
 
 Once the validation has been passed, the input provided is load to the database via the variable load.
+
+![application.py](https://github.com/crispino480/forimages/blob/main/application.py.png)
 </p>
