@@ -42,4 +42,4 @@ froshims.db is the database created with 5 tables: id, usermane, email, telephon
 styles.css is the css stylesheet referenced in layout.html, which contents all the webpage styling
 </p>
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](https://github.com/crispino480/forimages/blob/main/layout.html.png)
