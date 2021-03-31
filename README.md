@@ -14,10 +14,17 @@ The information provided by the end user  will then be stored into a database
  clients to gather input from them
  </p>
  
- ## Tools used: 
+ ## Tools and Languages used: 
 
  - This project is developed in ****CS50 IDE**** An integrated development environment, as a software application that provides 
  comprehensive facilities to computer programmers for software development.
+ - **Flask** (Flux Advanced Security Kernel) is a micro web framework written in Python.
+ - **Python** is an interpreted, high-level and general-purpose programming language.
+ - **Html (HyperText Markup Language)** is the standard markup language for documents designed to be displayed in a web browser.
+ - **sqlite** is a relational database management system contained in a C library; it allows a single database connection 
+ to access multiple database files simultaneously.
+  - **CSS(Cascading Style Sheets)** is a style sheet language used for describing the presentation of a document written 
+  in a markup language.
 
 **![Image of wepage](https://github.com/crispino480/forimages/blob/main/mywebpage.png)**
 <p>
