@@ -11,7 +11,7 @@ The webpage in this project is designed to gather and store comments or feedback
 This simple  web application was created using Flask in the cs50 IDE available for cs50 student
 </p>
 
-![Image of wepage](https://github.com/crispino480/forimages/blob/main/mywebpage.png)
+**![Image of wepage](https://github.com/crispino480/forimages/blob/main/mywebpage.png)**
 <p>
 The files used here  are application.py, where the application and routes are created,
 froshims.db is the database borrowed from a previous cs50 project
