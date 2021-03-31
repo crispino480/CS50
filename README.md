@@ -15,7 +15,7 @@ The information provided by the end user  will then be stored into a database
  </p>
  
  ## Tools used: 
-<p>
+
  -This project is developed in ****CS50 IDE**** An integrated development environment, as a software application that provides 
  comprehensive facilities to computer programmers for software development.
 
